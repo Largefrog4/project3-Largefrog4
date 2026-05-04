@@ -44,13 +44,35 @@ return <div>
 }
 
 function Latestproject1({ userData }) {
+  var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+console.log(userData)
     return (
         <div className="datacontainer">
            
            Repo name: {userData.name} <br></br>
            Description: {userData.description}<br></br>
            Language: {userData.language}
-          <br></br><a href ={userData.html_url}>Link</a>
+          <br></br><a href ={userData.html_url}>Link</a><br></br>
+          <button type="button" class="collapsible">More Info</button>
+<div class="content">
+  <p>
+    Created: {userData.created_at}<br></br>Last update: {userData.updated_at}<br></br>
+    Watchers: {userData.watchers_count}
+  </p>
+</div>
             
         </div>
     );
