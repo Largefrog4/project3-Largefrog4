@@ -27,9 +27,38 @@ import { useState, useEffect } from 'react';
   </div>
 }
  function About(){
+   const [username, setUsername] = useState("");
+  const [userData, setUserData] = useState(Object);
+
+    useEffect(() => {
+        getUserData();
+    }, [username]);
+
+    var gitHubUrl = "https://api.github.com/users/Largefrog4/repos";
+
+    const getUserData = async () => {
+        const octokit = new Octokit({});
+    const response = await octokit.request("GET /users/Largefrog4", {
+    username: "{Largefrog4}",
+    headers: {
+      'X-GitHub-Api-Version': '2026-03-10'
+    }, 
+    
+
+  }); 
+  console.log(response.data)
+        
+        setUserData(response.data)
+        
+    };
 return <div>
+  
   <p>About me<br></br>
     I am a junior studying computer science at Pace university, with a minor in IT.
+  </p>
+  <p>
+   <a href={userData.html_url}> Github: {userData.login}</a><br></br>
+   <img src={userData.avatar_url} width="100" height="100"></img>
   </p>
 </div>
 }
