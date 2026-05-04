@@ -43,15 +43,14 @@ return <div>
   </div>
 }
 
-function UserInfoCard({ userData }) {
-  console.log(userData)
-  console.log(userData.response)
+function Latestproject1({ userData }) {
     return (
         <div className="datacontainer">
            
-           
-            {userData.login ? (<div className="dataitem">
-                Name : {userData.login}</div>) : (<div></div>)}
+           Repo name: {userData.name} <br></br>
+           Description: {userData.description}<br></br>
+           Language: {userData.language}
+          <br></br><a href ={userData.html_url}>Link</a>
             
         </div>
     );
@@ -77,16 +76,16 @@ function UserInfoCard({ userData }) {
     
 
   }); 
-  console.log(response)
+  
         
-        setUserData({response})
+        setUserData(response.data[0])
         
     };
 
 
   return <div>
-    <UserInfoCard userData={userData} />
-    {/* <p>Projects</p>
+    
+    <p>Projects</p>
     <p>Team Web Design Project – Fictional Game Company Website                                       Jan 2024 – May 2024<br></br>
 Collaborated with a student team of 4 to design and build a website for a fictional game company using HTML and CSS.
 Implemented page layouts and visual elements to improve site presentation and usability.<br></br>
@@ -95,7 +94,9 @@ Python Blackjack Game                                                           
 Developed a simplified blackjack game in Python as part of coursework.
 Applied core programming concepts such as loops, conditional logic, and user interaction.
 
-    </p> */}
+    </p>
+    Latest Gitub Repo<br></br><br></br>
+    <Latestproject1 userData={userData} />
   </div>
 }
 function Home(){
