@@ -54,7 +54,7 @@ import { useState, useEffect } from 'react';
 return <div>
   
   <p>About me<br></br>
-    I am a junior studying computer science at Pace university, with a minor in IT.
+    I am a  computer science student at Pace university, with a minor in IT. I am expected to graduate in may 2027.
   </p>
   <p>
    <a href={userData.html_url}> Github: {userData.login}</a><br></br>
