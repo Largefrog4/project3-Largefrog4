@@ -2,7 +2,7 @@
   "homepage": "https://largefrog4.github.io/portfolio",
   "name": "react.proj",
   "version": "0.0.0",
-  "main": "/src/index.js",
+  "main": "/public/index.html",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
