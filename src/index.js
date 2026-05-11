@@ -128,8 +128,8 @@ console.log(userData)
 
   }); 
   
-        
-        setUserData(response.data[0])
+        console.log(response.data[response.data.length-1])
+        setUserData(response.data[response.data.length-1])
         
     };
 
